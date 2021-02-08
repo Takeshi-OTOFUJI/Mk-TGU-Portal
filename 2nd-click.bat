@@ -1,1 +1,1 @@
-powershell -Executionpolicy Unrestricted -command .\sample.ps1 1st-edit.csv
+powershell -Executionpolicy Unrestricted -command .\student.ps1 1st-edit.csv
