@@ -1,7 +1,7 @@
 ﻿$week=("月", "火", "水", "木", "金", "土" )
 $manaba_head="https://tohoku-gakuin.manaba.jp/ct/course_"
-$manaba_ent=("page", "rptadm?action=rptlist", "queryadm_examlist", "news?action=listadm", "topics", "surveyadm_examlist", "projadm")
-$manaba_lbl=("コ", "レ", "テ", "ニ", "掲", "ア", "プ")
+$manaba_ent=("page", "rptadm?action=rptlist", "queryadm_examlist", "news?action=listadm", "topics", "surveyadm_examlist", "projadm", "coursecollectionadm_user", "accessinfo")
+$manaba_lbl=("コ", "レ", "テ", "ニ", "掲", "ア", "プ", "個", "状")
 $outfile="授業.html"
 
 $line = ( Get-Content $Args[0] ) -as [string[]]
@@ -39,7 +39,7 @@ write-output "<td>$i</td>" | out-file $outfile -Encoding UTF8 -Append
        $o += '">'
        $o += $e[2] + '</a><br>'
        write-output $o | out-file $outfile -Encoding UTF8 -Append
-       for($c=4; $c -lt 11; $c++ ) {
+       for($c=4; $c -lt 13; $c++ ) {
          if( $e[$c] -ne "" ) {
            $o ='<a href="'
            $o +=$manaba_head + $e[3] + '_' + $manaba_ent[$c-4]
